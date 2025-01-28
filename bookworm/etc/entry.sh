@@ -13,9 +13,10 @@ fi
 
 eval bash "${STEAMCMDDIR}/steamcmd.sh" +force_install_dir "${STEAMAPPDIR}" \
                                 +@bClientTryRequestManifestWithoutCode 1 \
-				+login anonymous \
-				+app_update "${STEAMAPPID}" "${VALIDATE}"\
-				+quit
+                                +@sSteamCmdForcePlatformType linux \
+                                +login anonymous \
+                                +app_update "${STEAMAPPID}" "${VALIDATE}"\
+                                +quit
 
 # steamclient.so fix
 mkdir -p ~/.steam/sdk64
