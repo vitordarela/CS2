@@ -35,7 +35,8 @@ RUN set -x \
 	&& chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${STEAMAPPDIR}" \
 	# Clean up
         && apt-get clean \
-        && find /var/lib/apt/lists/ -type f -delete
+        && find /var/lib/apt/lists/ -type f -delete \
+        && ulimit -n 2048
 
 # BASE
 
